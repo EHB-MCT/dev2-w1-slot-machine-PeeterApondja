@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-  <head>
-    <title>Werkcollege 1</title>
-    <script type="module" src="./js/index.js" defer></script>
-    <style>
-      body {
-        font-family: sans-serif;
-        margin-left: 20px;
-      }
-      #result {
-        font-size: 50pt;
-        margin-top: 20px;
-      }
-      .♦, .♥ {
-        color: red;
-      }
-      #status {
-        font-weight: bold;
-        font-size: 30pt;  
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Slot machine</h1>
-    <button id="button" type="submit">Pull it!</button>
-    <div id="result"></div>
-    <p id="status"></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🎰 Peeter's Slotmachine 🎰</h1>
+
+  <div id="machine">
+    <div class="slot" id="slot1">?</div>
+    <div class="slot" id="slot2">?</div>
+    <div class="slot" id="slot3">?</div>
+  </div>
+
+  <button id="lever">DRAAI</button>
+
+  <div id="resultaat"></div>
+
+  <script src="js/index.js"></script>
+</body>
 </html>

@@ -1,27 +1,28 @@
-import {
-    slotMachine
-} from "./slotMachine.js";
+const tekens = ["🍒", "🍋", "🍉", "⭐", "💎", "♥"];
 
-function init() {
-    console.log("Init");
-    // TODO: log the document using console.log to test if you can get access to it
-    // TODO: log the submit button. If that works, store that button in a variable
-    // TODO: attach an event listener to that button and show a log "button clicked"
-    // TODO: if the submit button is clicked, the lever is pulled (= call that function)
+const knop = document.getElementById("lever");
+const slot1 = document.getElementById("slot1");
+const slot2 = document.getElementById("slot2");
+const slot3 = document.getElementById("slot3");
+const resultaat = document.getElementById("resultaat");
+
+function kiesRandomTeken() {
+  const index = Math.floor(Math.random() * tekens.length);
+  return tekens[index];
 }
 
-function pullLever() {
-    // TODO: reset the machine (you may skip this step for now, and focus on getting the machine to work first)
-    // TODO: spin the slot machine
-    // TODO: show slots and win status
-}
+knop.addEventListener("click", function () {
+  const t1 = kiesRandomTeken();
+  const t2 = kiesRandomTeken();
+  const t3 = kiesRandomTeken();
 
-function showSlots() {
-    // TODO: show the slot symbols in HTML
-}
+  slot1.textContent = t1;
+  slot2.textContent = t2;
+  slot3.textContent = t3;
 
-function showGameResult() {
-    // TODO: show a win or lose message in HTML
-}
-
-init();
+  if (t1 === t2 && t2 === t3) {
+    resultaat.textContent = "JE WINT 🎉💰";
+  } else {
+    resultaat.textContent = "JE VERLIEST 😭🥺";
+  }
+});
